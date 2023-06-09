@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+    //    let soA = prompt('Nhap A');
+    //    let soB = prompt('Nhap B');
+    //    let soC = soA + soB;
+    //    alert(soC);
+    </script>
+
+    <form action="">
+        Tien:
+        <input type="text" id="money" value="">
+
+        Lua chon
+        <select id="chuyen_doi">
+            <option value="VND"> VND </option>
+            <option value="USD"> USD </option>
+        </select>
+
+        <button type="button" id="tinh" onclick="khoi_xu_ly()"> Tinh toan </button>
+    </form>
+
+
+    <script>
+
+        // Khai bao khoi xu ly
+        function khoi_xu_ly(){
+            // Kiem tra bat su kien duoc hay chua
+            // alert(123)
+            
+            // Lấy các giá trị từ input
+            let money = document.getElementById('money').value;
+            let chuyen_doi = document.getElementById('chuyen_doi').value;
+            
+            // Kiem tra lay được giá trị hay chưa
+            // alert(money)
+            // alert(chuyen_doi)
+
+            // Cau truc dieu kien
+            let kQ = 0;
+            if( chuyen_doi == 'USD' ){
+                kQ = money / 23000;
+            }else{
+                kQ = money * 23000;
+            }
+
+            alert(kQ)
+
+        }
+    </script>
+</body>
+</html>
