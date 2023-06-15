@@ -1,0 +1,39 @@
+<table>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+
+</table>
+
+<script>
+    let str = '<table border="1" >';
+        // let cnt = 1;
+        for( let h = 2; h <= 10; h++ ){
+            str += '<tr>';
+                for( let c = 1; c <= 10; c++ ){
+                    // str += '<td> ' + cnt + ' </td>';
+
+                    str += '<td>';
+                        str += h + 'x' + c + '=' + (h*c);
+                    str += '</td>';
+
+                    // cnt++;
+                }
+            str += '</tr>';
+        }
+    str +=  '</table>';
+
+    document.write(str);
+
+    console.log(str);
+</script>
