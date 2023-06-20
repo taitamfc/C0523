@@ -1,0 +1,22 @@
+<script>
+    var books = ['Toan','Hoa','Sinh'];
+
+    // Muon thay doi cac phan tu thanh gia tri cu + " Hoc"
+    // books[0] = "Toan Hoc"
+    // books[1] = "Hoa Hoc"
+    // books[2] = "Sinh Hoc"
+
+    // for( let i = 0; i < books.length ; i++ ){
+    //     books[i] =  books[i] + " Hoc";
+    // }
+    // console.log(books);
+
+
+    books = books.map( function(book){
+        return book + ' Hoc';
+    })
+
+    console.log(books);
+
+
+</script>

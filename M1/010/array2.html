@@ -1,0 +1,19 @@
+<script>
+    var books = ['Toan','Hoa','Sinh'];
+    //              0     1      2
+    // console.log(books[0]);
+    // console.log(books[1]);
+    // console.log(books[2]);
+
+    for( let i = 0; i < 3; i ++ ){
+        console.log(books[i]);
+    }
+
+    for (let key in books) {
+        console.log(key);//0 1 2
+    }
+
+    for (let value of books) {
+        console.log(value);// Toan Ly Hoa
+    }
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        var books = ['Toan','Hoa','Sinh']
+                    // 0      1     2
+
+
+        // Truy cap vao phan tu
+        console.log(books[0]);
+        console.log(books[1]);
+        console.log(books[2]);
+        
+        // Thay doi tu Hoa sang Sinh
+        books[0] = 'Toan Hoc';
+        books[1] = 'Hoa Hoc';
+        books[2] = 'Sinh Hoc';
+
+        // Them phan tu vao cuoi mang
+        books.push('The duc')
+
+        // Them phan tu vao dau mang
+        books.unshift('Van Hoc')
+
+        // Xoa 1 phan tu o dau mang
+        books.shift()
+        
+        // Xoa 1 phan tu o cuoi mang
+        books.pop()
+
+        // Xoa phan tu tai vi tri nao do
+        books.splice(1,1)
+
+        // In ra mang
+        console.log(books);
+    </script>
+</body>
+</html>

@@ -1,0 +1,40 @@
+<script>
+
+    var tu_sach = [
+        ['Van', 'Su', 'Dia'], //0 + TA
+        //   0     1    2 
+        ['Toan', 'Ly', 'Hoa'] //1 + Sinh
+        //   0     1     2 
+    ]
+
+    console.log(tu_sach);
+
+    // Truy cap vao cac phan tu trong mang
+    console.log(tu_sach[0][0]);
+    console.log(tu_sach[0][1]);
+    console.log(tu_sach[0][2]);
+
+    console.log(tu_sach[1][0]);
+    console.log(tu_sach[1][1]);
+    console.log(tu_sach[1][2]);
+
+    // Thay doi gia tri
+    tu_sach[0][0] = 'Van hoc';
+    tu_sach[0][1] = 'Lich su';
+    tu_sach[0][2] = 'dia ly';
+
+    tu_sach[1][0] = 'toan hoc';
+    tu_sach[1][1] = 'vat ly';
+    tu_sach[1][2] = 'hoa hoc';
+
+    // Them phan tu vao cuoi mang
+    // tu_sach[0].push("anh van")
+    // tu_sach[1].push('sinh hoc')
+
+    tu_sach[0].splice(2,1,'Them')
+
+
+    console.log(tu_sach);
+
+
+</script>
