@@ -1,0 +1,31 @@
+<script>
+    let HCN = function(){
+        // Thuoc tinh CDAI
+        this.chieu_dai = 0;
+        // Thuoc tinh CRONG
+        this.chieu_rong = 0;
+        // Phuong thuc tinh_chuvi
+        this.tinh_chuvi = function(){
+            let ket_qua= (this.chieu_dai+ this.chieu_rong)*2
+            return ket_qua
+        }
+        // Phuong thuc tinh_dientich
+        this.tinh_dientich = function(){
+            let ket_qua = (this.chieu_dai * this.chieu_rong)
+            return ket_qua
+        }
+    }
+
+    // Khoi tao doi tuong
+    let hinhhchunhat = new HCN();
+    // Thiet lap gia tri thuoc tinh cho CDAI
+    hinhhchunhat.chieu_dai = 20;
+    // Thiet lap gia tri thuoc tinh cho CRONG
+    hinhhchunhat.chieu_rong = 10;    
+    // Goi phuong thuc tinh_chuvi()
+    let cv = hinhhchunhat.tinh_chuvi();
+    console.log(cv);
+    // Goi phuong thuc tinh_dientich()
+    let dt = hinhhchunhat.tinh_dientich();
+    console.log(dt);
+</script>

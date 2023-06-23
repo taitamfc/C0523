@@ -1,0 +1,39 @@
+<script>
+    let sachVan = 'Van';
+    let books = ['Van','Su','Dia'];
+    let tam = {
+        // Thuoc tinh
+        ten: 'Tam',
+        tuoi: 23,
+        toc: 'black',
+        dia_chi: 'QT',
+
+        // Phuong thuc
+        hoc: function( mon_hoc ){
+            console.log('Toi dang hoc :' + mon_hoc);
+        },
+        the_thao: function(){
+            console.log('Choi the thao');
+        },
+        an_nhau: function(){
+            console.log('An nhau');
+        },
+        gioi_thieu: function(){
+            console.log('Xin chao cac ban !');
+            console.log('Toi ten la: ' + this.ten);
+            console.log('Toi co nhung hoat dong sau: ');
+            this.hoc('java')
+            this.the_thao();
+        }
+    }
+
+    console.log(tam);
+    console.log(tam.ten);
+    console.log(tam.tuoi);
+
+    tam.hoc( 'Javascript' )
+    tam.the_thao()
+    tam.an_nhau();
+    tam.gioi_thieu();
+
+</script>

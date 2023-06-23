@@ -1,0 +1,38 @@
+<script>
+    let Human = function(){
+        // Thuoc tinh
+        this.ten = '';
+        this.tuoi = 0;
+
+        // Phuong thuc
+        this.hoc = function( mon_hoc ){
+            console.log( this.ten + ' dang hoc ' + mon_hoc );
+        }
+        this.giai_tri = function(){
+            console.log( this.ten + ' dang giai tri' );
+        }
+    }
+
+    // Sinh ra 3 doi tuong
+    let phu = new Human();
+    // Thiet lap gia tri TT
+    phu.ten = 'Phu'
+    phu.tuoi = 32
+    phu.hoc( 'Javascript' )
+    phu.giai_tri()
+
+    let vu = new Human();
+    vu.ten = 'Vu'
+    vu.tuoi = 21
+    vu.hoc('Java')
+
+    let lam = new Human();
+
+    console.log(phu);
+    console.log(vu);
+    console.log(lam);
+
+
+
+
+</script>
