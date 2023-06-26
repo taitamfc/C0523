@@ -1,0 +1,62 @@
+<canvas id="myCanvas" width="500" height="500"></canvas>
+<script>
+    // Viet lop HinhTron
+    /*
+    Thuoc tinh:
+        ban_kinh: int
+        mau_sac: string
+    Phuong thuc
+        HinhTron( ts_bk ): void => khoi tao
+        setBankinh(ts_bk): void
+        getBankinh(): int
+        setMausac(ts_mau): void
+        getMausac(): string
+        tinhChuvi(): int
+        tinhDienTich: int
+        veHinh: void
+    */
+    let HinhTron = function (ts_bk) {
+        this.ban_kinh = 0;
+        this.mau_sac = '';
+        this.setBan_kinh = function (ts_bk) {
+            this.ban_kinh = ts_bk
+        }
+        this.getBan_kinh = function () {
+            return this.ban_kinh
+        }
+        this.setMau_sac = function (ts_mau) {
+            this.mau_sac = ts_mau
+        }
+        this.getMau_sac = function () {
+            return this.mau_sac
+        }
+        this.tinhChuvi = function () {
+            return this.ban_kinh * 2 * 3.14;
+        }
+        this.tinhDientich = function () {
+            return this.ban_kinh * this.ban_kinh * 3.14;
+        }
+        this.veHinh = function(){
+            var c = document.getElementById("myCanvas");
+            var ctx = c.getContext("2d");
+            ctx.beginPath();
+            /*
+            arc( x,y,r,sAngle,eAngle )
+            */
+            ctx.arc(50,100,this.ban_kinh,0,0.5*Math.PI);
+            ctx.stroke();
+        }
+
+
+    }
+
+    let hinhtron1 = new HinhTron(6)
+    hinhtron1.setBan_kinh(30);
+    hinhtron1.setMau_sac("den");
+    console.log(hinhtron1.getBan_kinh());
+    console.log(hinhtron1.getMau_sac());
+    console.log(hinhtron1.tinhChuvi());
+    console.log(hinhtron1.tinhDientich());
+
+    hinhtron1.veHinh();
+</script>

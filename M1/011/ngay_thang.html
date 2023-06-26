@@ -1,0 +1,54 @@
+<script>
+    let MyDate = function(ts_ngay,ts_thang,ts_nam){
+        // Thuoc tinh
+        this.ngay = 0;
+        this.thang = 0;
+        this.nam = 0;
+
+        // Phuong thuc
+        this.setNgay = function( ts_ngay ){
+            this.ngay = ts_ngay
+        }
+        this.getNgay = function(){
+            return this.ngay
+        }
+
+        // Thang
+        this.setThang = function(ts_thang){
+            this.thang = ts_thang
+        }
+        this.getThang = function(){
+            return this.thang
+        }
+        // Nam
+        this.setNam = function(ts_nam){
+            this.nam = ts_nam    
+        }
+        this.getNam = function(){
+            return this.nam
+        }
+        // Tra ve chuoi
+        this.toString = function(){
+            // Tra ve dinh dang ngay/thang/nam
+            return this.ngay + "/" + this.thang + "/" + this.nam 
+        }
+    }
+
+    // Khoi tao doi tuong: truyen vao 3 doi so 26,6,2023
+    let today = new MyDate(26,6,2023);
+    // Goi pt setNgay
+    today.setNgay(26)
+    // Goi pt setThang
+    today.setThang(6)
+    // Goi pt set Nam
+    today.setNam(2023)
+    // Goi Pt getNgay va in ra
+    console.log(today.getNgay());
+    // Goi Pt getThang va in ra
+    console.log(today.getThang());
+    // Goi Pt getNam va in ra
+    console.log(today.getNam());
+    console.log(today.toString());
+    // In ra doi tuong
+    console.log(today);
+</script>
