@@ -4,6 +4,7 @@
     // $_GET   : nhận dữ liệu gửi lên qua method GET
     // $_REQUEST : nhận dữ liệu gửi lên qua method GET
 
+    // Kiểm tra người dùng đã gửi dữ liệu lên hay chưa 
     if( $_SERVER['REQUEST_METHOD'] == 'POST' ){
         // Xử lý
         // Lấy giá trị gửi lên
