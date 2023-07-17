@@ -16,8 +16,6 @@ if( isset( $_REQUEST['ho_va_ten'] ) && isset( $_REQUEST['mat_khau'] ) ){
         echo 'Tai khoan khong dung';
     }
 }
-
-
 ?>
 <form action="" method="get">
     Ten dang nhap: <input type="text" name="ho_va_ten" > <br>
