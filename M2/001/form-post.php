@@ -22,7 +22,6 @@
         }else{
             echo 'Tai khoan khong dung';
         }
-        
     }
     // echo '<pre>';
     // print_r($_SERVER);
