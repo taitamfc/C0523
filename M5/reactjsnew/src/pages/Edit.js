@@ -3,6 +3,7 @@ import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
 import { useParams } from 'react-router-dom';
+import Product from "../models/Product";
 
 const rules = Yup.object().shape({
     name: Yup.string()
@@ -28,36 +29,25 @@ function Edit(props) {
 
     // Chạy 1 lần duy nhất
     useEffect( () => {
-        // Gọi API, có dữ liệu trả về
-        let products = localStorage.getItem('products');
-        if(products){
-         products = JSON.parse(products)
-        }else{
-            products = [];
-        }
-
-        // Thiết lập danh sách sản phẩm
-        setItems( products );
-
         setId( params.id );
+
+        Product.find(params.id).then( (res) => {
+            setFormData(res.data);
+        })
         // Thiết lập data cho form data
-        setFormData( products[params.id] )
+        // setFormData( products[params.id] )
     },[] );
     
 
     const handleSubmit = (values) => {
         let data = values;
-        // Sao chép lại mảng items
-        let new_items = [...items];
-        // Thêm phần tử vào new_items
-        new_items[params.id] = data
-        // Chuyển đổi mảng sang json
-        new_items = JSON.stringify(new_items);
-        // Lưu vào local storage
-        localStorage.setItem('products',new_items);
-        // Chuyển hướng
-        navigate("/")
-
+        Product.update( params.id, data ).then( (res) => {
+            alert('Thành công')
+            // Chuyển hướng
+            navigate("/")
+        }).catch( (res) => {
+            alert('Thất bại')
+        })
     }
     return (
         <div>

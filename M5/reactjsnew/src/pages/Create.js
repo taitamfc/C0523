@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Formik, Form, Field } from "formik";
 import * as Yup from "yup";
 import { useNavigate } from "react-router-dom";
+import Product from "../models/Product";
 
 const rules = Yup.object().shape({
     name: Yup.string()
@@ -24,30 +25,17 @@ function Create(props) {
         'price' : ''
     })
 
-     // Chạy 1 lần duy nhất
-    useEffect( () => {
-        // Gọi API, có dữ liệu trả về
-        let products = localStorage.getItem('products');
-        if(products){
-            products = JSON.parse(products)
-        }else{
-            products = [];
-        }
-        setItems(products)
-    },[] );
 
     const handleSubmit = (values) => {
         let data = values;
-        // Sao chép lại mảng items
-        let new_items = [...items];
-        // Thêm phần tử vào new_items
-        new_items.push(data);
-        // Chuyển đổi mảng sang json
-        new_items = JSON.stringify(new_items);
-        // Lưu vào local storage
-        localStorage.setItem('products',new_items);
-        // Chuyển hướng
-        navigate("/")
+        Product.store( data ).then( (res) => {
+            alert('Thêm thành công');
+            // Chuyển hướng
+            navigate("/")
+        }).catch( (res) => {
+            alert('Thêm thất bại')
+        })
+        
 
     }
     return (
