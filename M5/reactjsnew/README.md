@@ -27,3 +27,9 @@
             payload: 10
         };
         dispatch(action)
+# Bước 8: applyMiddleware: trong file store.js
+- import { applyMiddleware } from "redux";
+- Khai báo myMiddleware
+- Gọi myMiddleware khi gọi createStore
+
+
