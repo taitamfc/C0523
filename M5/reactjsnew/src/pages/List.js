@@ -1,7 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 
+import { useDispatch, useSelector } from 'react-redux';
+import { DEPOSIT, DRAW } from '../redux/action';
+
 function List(props) {
+
+    const amount = useSelector(state => state.amount);
+    const dispatch = useDispatch();
+
     // Làm việc với dữ liệu
   const [items,setItems] = useState([]);
   // Chạy 1 lần duy nhất
@@ -15,7 +22,7 @@ function List(props) {
     }
     setItems(products)
 
-  },[items] );
+  },[] );
 
   const handleDelete = (id) => {
     let new_items = [...items];
@@ -29,9 +36,27 @@ function List(props) {
 
   }
 
+    const handleDeposit = () => {
+        let action = {
+            type: DEPOSIT,
+            payload: 10
+        };
+        dispatch(action)
+    }
+    const handleDraw = () => {
+        let action = {
+            type: DRAW,
+            payload: 10
+        };
+        dispatch(action)
+    }
 
     return (
         <div>
+
+            <h1>Amount: {amount}</h1>
+            <button onClick={handleDeposit} > Deposti </button>
+            <button onClick={handleDraw}> Draw </button>
 
             <Link to={'/create'}>Create</Link>
 
