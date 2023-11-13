@@ -1,16 +1,14 @@
-import { DEPOSIT, DRAW } from "./action";
+import { FETCH_USER_SUCCESS } from "./action";
 
 const initialState = {
-    amount: 0
+    users: [],
 };
 const rootReducer = (state = initialState, action) => {
     // Handle các actions gửi lên
     console.log(state);
     switch (action.type) {
-        case DEPOSIT:
-            return { ...state, amount: state.amount + action.payload };
-        case DRAW:
-            return { ...state, amount: state.amount - action.payload };
+        case FETCH_USER_SUCCESS:
+                return { ...state, users: action.payload };
         default:
             return state;
     }

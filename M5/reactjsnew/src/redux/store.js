@@ -1,19 +1,15 @@
-import { createStore } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import rootReducer from "./reducer";
-import { applyMiddleware } from "redux";
-import { DEPOSIT } from "./action";
+import createSagaMiddleware from "redux-saga";
+import rootSaga from "../saga/userSaga";
 
-// Tạo middleware myMiddleware
-const myMiddleware = (store) => (next) => (action) => {
-    console.log("action", action);
-    if( action.type == DEPOSIT )
-    {
-        action.payload = action.payload + 5;
-    }
-    next(action);
-};
+// Apply middleware
+const sagaMiddleware = createSagaMiddleware();
 
-// const store = createStore(rootReducer);
-const store = createStore(rootReducer, applyMiddleware(myMiddleware));
+// Đăng kí reducer cho redux quản lí
+const store = createStore(rootReducer, applyMiddleware(sagaMiddleware));
+
+// Chạy middleware cho redux để chạy các effect tại dòng code
+sagaMiddleware.run(rootSaga);
 
 export default store;
